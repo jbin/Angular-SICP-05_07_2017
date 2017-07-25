@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://localhost:8000/#/ -->
+<html class=" js no-mobile desktop no-ie chrome chrome59 root-section gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius cssreflections csstransforms csstransitions no-touch no-retina fontface domloaded w-1920 gt-240 gt-320 gt-480 gt-640 gt-768 gt-800 gt-1024 gt-1280 gt-1440 gt-1680 no-portrait landscape"
+ id="index-page">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Angular</title>
+
+	<link rel="stylesheet" href="./src/reveal.css">
+	<link rel="stylesheet" href="./src/ng-sn.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="./src/vs.css">
+
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<link rel="stylesheet" type="text/css" href="./src/paper.css">
+	<script type="text/javascript" src="./src/marked.js"></script>
+	<script type="text/javascript" src="./src/markdown.js"></script>
+	<script type="text/javascript" src="./src/notes.js"></script>
+	<script type="text/javascript" src="./src/highlight.js"></script>
+</head>
+
+<body>
+	<div class="reveal slide center ready" data-transition-speed="default" data-background-transition="fade" role="application">
+		<div class="top-line">
+			<img src="./src/angular.svg" alt="" id="ng-brand">
+			<div>Angular</div>
+			<div id="logo">Cloud &amp; Mobile SICP - 05.07.2017</div>
+		</div>
+		<div class="slides" style="width: 1920px; height: 1060px; left: 50%; top: 50%; bottom: auto; right: auto; transform: translate(-50%, -50%) scale(0.864858);">
+			<section class="present" style="top: 173px; display: block;">
+
+				<img src="./src/angular.svg" alt="" style="max-height: 450px;border: none; box-shadow: none;">
+				<h1>Angular</h1>
+			</section>
+
+			<section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" class="future" style="top: 249.5px; display: block;"
+			 hidden="" aria-hidden="true">
+				<h2 id="-ber-mich">Über mich</h2>
+				<ul>
+					<li>B.Sc. Wirtschaftsinformatik</li>
+					<li>IT-Berater &amp; Entwickler bei der S&amp;N AG in Paderborn</li>
+					<li>Schwerpunkt Web &amp; User Experience</li>
+					<li>Single Page Applications seit 2012</li>
+					<li>Angular 2+ seit Ende 2016 (late Beta)</li>
+					<li>Schulungen zum Thema Angular &amp; TypeScript</li>
+				</ul>
+			</section>
+			<section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" class="future" style="top: 249.5px; display: block;"
+			 hidden="" aria-hidden="true">
+				<h2 id="inhalt">Inhalt</h2>
+				<ul>
+					<li>Single-Page Applikationen: Verloren im Framework-Dschungel</li>
+					<li>Was ist Angular?</li>
+					<li>Angular &amp; Enterprise?</li>
+					<li>Fazit: Vorteile &amp; Herausforderungen</li>
+					<li>Demo</li>
+					<li>Diskussion / Rückfragen</li>
+				</ul>
+			</section>
+			<section data-charset="utf-8" class="stack future" style="top: 0px; display: none;" data-previous-indexv="0" hidden=""
+			 aria-hidden="true">
+				<section data-markdown="" data-markdown-parsed="true" class="" style="top: 206px; display: none;" aria-hidden="true">
+					<h2 id="warum-berhaupt-eine-single-page-application-">Warum überhaupt eine Single-Page Application?</h2>
+					<p><strong>SPAs kombinieren Vorteile von Fat-Client und Webanwendungen:</strong></p>
+					<ul>
+						<li>Kommunikation beschränkt sich auf benötigte Daten </li>
+						<li>Lösung für Plattformunabhängigkeit &amp; Softwareverteilung</li>
+						<li>Auslagerung von Last auf den Client möglich</li>
+						<li>Einfache Skalierung via REST</li>
+						<li>Fat-Client User Experience möglich (z.B. Offline, Reaktionszeiten)</li>
+						<li>...</li>
+					</ul>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 239px; display: none;">
+					<h2 id="problem-1-verloren-im-framework-dschungel">Problem #1: Verloren im Framework Dschungel</h2>
+					<p>Tausende neue Frameworks und Libraries<br>­+<br>Viel Hype<br>=<br>akute JavaScript Ermüdung<br><em>(JavaScript Fatigue)</em></p>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 229.5px; display: none;">
+					<h2 id="qualit-tsanspr-che-an-ein-framework-">Qualitätsansprüche an ein Framework:</h2>
+					<ul>
+						<li>Produktivität</li>
+						<li>Technische Agilität/ Flexibilität</li>
+						<li>Übliche techische Rahmenbedingungen/Anforderungen</li>
+						<li>Ökosystem/Dokumentation</li>
+						<li>Investitionssicherheit</li>
+					</ul>
+					<p><strong>Diese Kriterien reduzieren die Auswahl an Framworks drastisch.</strong></p>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 530px; display: none;">
+					<h2 id="problem-2-javascript-">Problem #2: JavaScript?!?</h2>
+					<blockquote>
+						<p>Ist das nicht die Sprache, die Brendan Eich in 10 Tagen entwickelt hat? </p>
+						<p>Damit entwickelt man Dropdown-Menüs, keine Applikationen. </p>
+						<p>...</p>
+					</blockquote>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 530px; display: none;">
+					<h2 id="javascript-wird-erwachsen">JavaScript wird erwachsen</h2>
+					<h4 id="-ecmascript-2015-">(ECMAScript 2015+)</h4>
+					<ul>
+						<li>Klassen</li>
+						<li>Module</li>
+						<li>Imports</li>
+						<li>Promises</li>
+						<li>Lambdas </li>
+						<li>Templates</li>
+						<li>...</li>
+					</ul>
+				</section>
+			</section>
+			<section data-charset="utf-8" class="stack future" style="top: 0px; display: none;" data-previous-indexv="0" hidden=""
+			 aria-hidden="true">
+				<section data-markdown="" data-markdown-parsed="true" class="" style="top: 278px; display: none;" aria-hidden="true">
+					<h1 id="was-ist-angular-">Was ist Angular?</h1>
+					<h4 id="-angular-claim-"><em>Angular Claim:</em></h4>
+					<blockquote>
+						<p>One framework.<br>Mobile &amp; Desktop. </p>
+					</blockquote>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 229.5px; display: none;">
+					<h2 id="welches-problem-will-angular-l-sen-">Welches Problem will Angular lösen?</h2>
+					<ul>
+						<li>Plattformübergreifende Entwicklung</li>
+						<li>Skalierende (echte) Clients</li>
+						<li>Responsive Clients (Display, Endgerät, ...)</li>
+						<li>Hohe Produktivität in der Entwicklung</li>
+						<li><strong>Web meets App</strong></li>
+					</ul>
+					<p>=&gt; Produktive Lösung eines weitverbreiteten Problems</p>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 268px; display: none;">
+					<h4 id="angular-fakten">Angular Fakten</h4>
+					<ul>
+						<li>Maintainer: Google + Community</li>
+						<li>Aktuelle Versionen : 4.2.x</li>
+						<li>Multiplattform Framework (Web, Mobile)</li>
+						<li>TypeScript basiert</li>
+						<li>Struktur: Komponenten &amp; Module</li>
+						<li>Vorgänger: Angular.js (Version 1)</li>
+					</ul>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 530px; display: none;">
+					<h2 id="usecases">Usecases</h2>
+					<ul>
+						<li>Standard Webclient</li>
+						<li>Progressive Webapp</li>
+						<li>Native Apps (NativeScript)</li>
+						<li>Echter Fat-Client (z.B. via Electron)</li>
+						<li>...</li>
+					</ul>
+				</section>
+			</section>
+			<section data-charset="utf-8" class="stack future" style="top: 0px; display: none;" data-previous-indexv="0" hidden=""
+			 aria-hidden="true">
+				<section data-markdown="" data-markdown-parsed="true" class="" style="top: 200px; display: none;" aria-hidden="true">
+					<h2 id="angular-features">Angular Features</h2>
+					<ul>
+						<li>Module</li>
+						<li>Komponenten</li>
+						<li>Dependency Injection</li>
+						<li>Databinding</li>
+						<li>Integration
+							<ul>
+								<li>Build- &amp; Optimierungsstrategie</li>
+								<li>Test-Framework</li>
+								<li>Code Generierung via CLI</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 0px; display: none;">
+					<h2 id="module-applikationsstrukturierung">Module &amp; Applikationsstrukturierung</h2>
+					<p><img src="./src/ApplStruktur.png" alt=""></p>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 223px; display: none;">
+					<h2 id="webcomponents">Webcomponents</h2>
+					<p><img src="./src/wc-logo.svg" style="height:300px"></p>
+					<p>Modularisierung &amp; Wiederverwendbarkeit auf DOM Ebene</p>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 530px; display: none;">
+					<h2 id="angular-komponenten">Angular Komponenten</h2>
+					<p><img src="./src/Component.png" alt=""></p>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 530px; display: none;">
+					<p><img src="./src/Architecture_of_an_Angular_2_application.png" alt=""> </p>
+					<p>Überblick Komponentensystem<br><small>© <a href="https://commons.wikimedia.org/wiki/User:Dereckson">Dereckson @ Wikimedia</a></small></p>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 530px; display: none;">
+					<h2 id="build-optimierung">Build &amp; Optimierung</h2>
+					<pre><code class="lang-bash hljs">ng build --prod
+ng serve --prod
+</code></pre>
+					<ul>
+						<li>Build via CLI</li>
+						<li>Environment Variablen &amp; Profile</li>
+						<li>AoT Compiler</li>
+						<li>hash, minify, combine</li>
+						<li>ca. 180kb Auslieferungsgröße des Frameworks</li>
+					</ul>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 530px; display: none;">
+					<h2 id="testing">Testing</h2>
+					<pre><code class="lang-ps hljs powershell">ng test
+ng e2e
+</code></pre>
+					<ul>
+						<li>Unittests via Karma</li>
+						<li>End-to-End Test via Protractor</li>
+						<li>Test-Stubs werden automatisch mitgeneriert</li>
+						<li>Live Unittest Dashboard</li>
+						<li>Reporting der Testabdeckung</li>
+					</ul>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 530px; display: none;">
+					<h2 id="boilerplate-generierung">Boilerplate Generierung</h2>
+					<h4 id="best-practice-blueprints">Best-Practice Blueprints</h4>
+					<pre><code class="lang-bash hljs">ng generate component MyComponent
+ng generate service MyService
+ng generate module MyModule
+...
+</code></pre>
+				</section>
+			</section>
+			<section data-charset="utf-8" class="stack future" style="top: 0px; display: none;" data-previous-indexv="0" hidden=""
+			 aria-hidden="true">
+				<section data-markdown="" data-markdown-parsed="true" class="" style="top: 422px; display: none;" aria-hidden="true">
+					<h1 id="angular-enterprise-">Angular &amp; Enterprise?</h1>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 216px; display: none;">
+					<h2 id="offene-fragen-an-die-javascript-welt">Offene Fragen an die JavaScript Welt</h2>
+					<ul>
+						<li>Investitionssicherheit (Wie lange lebt das Framework?)</li>
+						<li>Tooling?</li>
+						<li>Strukturierung &amp; Organisation großer Projekte?</li>
+						<li>Wartung?</li>
+						<li>Reproduzierbare &amp; verlässliche Builds?</li>
+						<li>Testing?</li>
+						<li>...</li>
+					</ul>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" aria-hidden="true" hidden="" style="top: 249px; display: none;">
+					<h2 id="antworten-die-angular-liefert">Antworten die Angular liefert</h2>
+					<ul>
+						<li>Maintainer Google + starker Fokus auf Einbindung der Community</li>
+						<li>Klar definierter Release Cycle mit LTS-Support</li>
+						<li>TypeScript! (samt Tooling)</li>
+						<li><em>opinionated framework</em> Ansatz</li>
+						<li>Angular CLI</li>
+						<li>integrierte TDD Testsuite</li>
+					</ul>
+				</section>
+			</section>
+			<section data-charset="utf-8" class="stack future" style="top: 0px; display: none;" data-previous-indexv="0" hidden=""
+			 aria-hidden="true">
+				<section data-markdown="" data-markdown-parsed="true" class="" style="top: 422px; display: none;" aria-hidden="true">
+					<h1 id="fazit">Fazit</h1>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" style="top: 216px; display: none;" hidden="" aria-hidden="true">
+					<h2 id="was-sind-die-gr-ten-vorteile-">Was sind die größten Vorteile?</h2>
+					<ul>
+						<li>Community &amp; Maintainer</li>
+						<li>TypeScript &amp; Tooling</li>
+						<li>Dokumentation!</li>
+						<li>Agilität &amp; schnelle Feature Releases</li>
+						<li>Ausrichtung an den Web-Standards</li>
+						<li>Reduzierter Team-Onboarding Aufwand (opinionated)</li>
+						<li>Mitnahme von Marketingeffekten möglich</li>
+					</ul>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" style="top: 283px; display: none;" hidden="" aria-hidden="true">
+					<h2 id="herausforderungen">Herausforderungen</h2>
+					<ul>
+						<li>Upgrade/Migrationsstrategie</li>
+						<li>Noch relativ starke Bewegung im Tooling</li>
+						<li>Lernkurve kann eine Herausforderung sein</li>
+						<li>Einschränkungen in der Freiheit der Entwicklung (opinionated)</li>
+						<li>Verwirrung mit Version 1 (z.B. Google-Ergebnisse)</li>
+					</ul>
+				</section>
+				<section data-markdown="" data-markdown-parsed="true" class="future" style="top: 364.5px; display: none;" hidden="" aria-hidden="true">
+					<blockquote>
+						<p>Google geht mit Angular ab Version 2 einen großen Schritt in Richtung Enterprise-Fähigkeit, ohne die notwendige Agilität
+							im sich schnell wandelnden Web-Ökosystem zu opfern</p>
+					</blockquote>
+				</section>
+			</section>
+			<section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" class="future" style="top: 422px; display: none;"
+			 hidden="" aria-hidden="true">
+				<h1 id="demo">Demo</h1>
+			</section>
+		</div>
+		<div class="backgrounds">
+			<div class="slide-background present" data-loaded="true" style="display: block;"></div>
+			<div class="slide-background future" data-loaded="true" style="display: block;"></div>
+			<div class="slide-background future" data-loaded="true" style="display: block;"></div>
+			<div class="slide-background stack future" data-loaded="true" style="display: none;">
+				<div class="slide-background present" data-loaded="true" style="display: none;"></div>
+				<div class="slide-background future" data-loaded="true" style="display: none;"></div>
+				<div class="slide-background future" data-loaded="true" style="display: none;"></div>
+				<div class="slide-background future" style="display: none;"></div>
+				<div class="slide-background future" style="display: none;"></div>
+			</div>
+			<div class="slide-background stack future" data-loaded="true" style="display: none;">
+				<div class="slide-background present" data-loaded="true" style="display: none;"></div>
+				<div class="slide-background future" data-loaded="true" style="display: none;"></div>
+				<div class="slide-background future" data-loaded="true" style="display: none;"></div>
+				<div class="slide-background future" style="display: none;"></div>
+			</div>
+			<div class="slide-background stack future" data-loaded="true" style="display: none;">
+				<div class="slide-background present" data-loaded="true" style="display: none;"></div>
+				<div class="slide-background future" data-loaded="true" style="display: none;"></div>
+				<div class="slide-background future" data-loaded="true" style="display: none;"></div>
+				<div class="slide-background future" style="display: none;"></div>
+				<div class="slide-background future" style="display: none;"></div>
+				<div class="slide-background future" style="display: none;"></div>
+				<div class="slide-background future" style="display: none;"></div>
+				<div class="slide-background future" style="display: none;"></div>
+			</div>
+			<div class="slide-background stack future" data-loaded="true" style="display: none;">
+				<div class="slide-background present" data-loaded="true" style="display: none;"></div>
+				<div class="slide-background future" data-loaded="true" style="display: none;"></div>
+				<div class="slide-background future" data-loaded="true" style="display: none;"></div>
+			</div>
+			<div class="slide-background stack future" data-loaded="true" style="display: none;">
+				<div class="slide-background present" data-loaded="true" style="display: none;"></div>
+				<div class="slide-background future" data-loaded="true" style="display: none;"></div>
+				<div class="slide-background future" data-loaded="true" style="display: none;"></div>
+				<div class="slide-background future" data-loaded="true" style="display: none;"></div>
+			</div>
+			<div class="slide-background future" data-loaded="true" style="display: none;"></div>
+		</div>
+		<div class="progress" style="display: block;"><span style="width: 0px;"></span></div>
+		<aside class="controls" style="display: block;"><button class="navigate-left" aria-label="previous slide" disabled="disabled"></button><button class="navigate-right enabled"
+			 aria-label="next slide"></button><button class="navigate-up" aria-label="above slide" disabled="disabled"></button>
+			<button
+			 class="navigate-down" aria-label="below slide" disabled="disabled"></button>
+		</aside>
+		<div class="slide-number" style="display: block;"><span class="slide-number-a">1</span><span class="slide-number-delimiter">/</span><span class="slide-number-b">28</span></div>
+		<div
+		 class="speaker-notes" data-prevent-swipe="" tabindex="0"></div>
+	<div class="pause-overlay"></div>
+	<div id="aria-status-div" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px 1px 1px 1px);">
+
+
+		Angular
+	</div>
+	</div>
+
+	<script src="./src/head.min.js"></script>
+	<script src="./src/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			history: true,
+			/*width: '95%',
+			height: '100%',*/
+			width: 1920,
+			height: 1060,
+			pdfMaxPagesPerSlide: 1,
+
+			// Factor of the display size that should remain empty around the content
+			margin: 0.05,
+			dependencies: [
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+
+		Reveal.configure({ slideNumber: 'c/t' });
+	</script>
+</body>
+
+</html>
